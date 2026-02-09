@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expnz — AI-powered bill scanning & expense tracking. Privacy-first. Your data stays on your device.">
+    <title>Expnz — Smart Bill Scanning & Expense Tracking</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-600: #2563EB;
+            --blue-700: #1D4ED8;
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --slate-900: #0F172A;
+            --slate-800: #1E293B;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748B;
+            --slate-400: #94A3B8;
+            --slate-200: #E2E8F0;
+            --slate-100: #F1F5F9;
+            --slate-50: #F8FAFC;
+            --green-600: #16A34A;
+            --green-50: #F0FDF4;
+            --green-100: #DCFCE7;
+            --white: #FFFFFF;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-800);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,.15), transparent),
+                radial-gradient(ellipse 40% 60% at 80% 100%, rgba(37,99,235,.08), transparent);
+            pointer-events: none;
+        }
+        .hero-inner { max-width: 680px; margin: 0 auto; position: relative; }
+        .hero-logo {
+            width: 88px; height: 88px;
+            border-radius: 22px;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 32px rgba(37,99,235,.3);
+            display: block;
+        }
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: .75rem;
+        }
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: var(--slate-400);
+            line-height: 1.6;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 1.75rem;
+            padding: .5rem 1rem;
+            background: rgba(22,163,74,.12);
+            border: 1px solid rgba(22,163,74,.2);
+            border-radius: 100px;
+            font-size: .85rem;
+            color: #4ADE80;
+            font-weight: 500;
+        }
+        .privacy-badge svg { flex-shrink: 0; }
+
+        .section { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .section-title {
+            font-size: .8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--slate-500);
+            margin-bottom: 1.25rem;
+        }
+
+        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color .2s, box-shadow .2s, transform .15s;
+        }
+        .card:hover {
+            border-color: var(--blue-600);
+            box-shadow: 0 4px 24px rgba(37,99,235,.08);
+            transform: translateY(-2px);
+        }
+        .card-icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .card-icon.privacy { background: var(--blue-50); color: var(--blue-600); }
+        .card-icon.terms { background: var(--slate-100); color: var(--slate-700); }
+        .card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: .35rem;
+            color: var(--slate-900);
+        }
+        .card p { font-size: .875rem; color: var(--slate-500); line-height: 1.55; }
+        .card .arrow {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--blue-600);
+            display: flex; align-items: center; gap: .35rem;
+        }
+
+        .features {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            margin-top: 1rem;
+        }
+        .features h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+        }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem .5rem; }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem;
+            font-size: .85rem;
+            color: var(--slate-600);
+            line-height: 1.45;
+        }
+        .feature-item svg { flex-shrink: 0; margin-top: 2px; color: var(--green-600); }
+
+        .privacy-highlights {
+            background: var(--green-50);
+            border: 1px solid var(--green-100);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.75rem;
+            margin-top: 1rem;
+        }
+        .privacy-highlights h3 {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--green-600);
+            margin-bottom: .75rem;
+            display: flex; align-items: center; gap: .5rem;
+        }
+        .ph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+        .ph-item {
+            font-size: .825rem;
+            color: var(--slate-600);
+            display: flex; align-items: center; gap: .4rem;
+        }
+        .ph-item svg { flex-shrink: 0; color: var(--green-600); }
+
+        footer {
+            border-top: 1px solid var(--slate-200);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        footer p { font-size: .8rem; color: var(--slate-400); line-height: 1.6; }
+        footer a { color: var(--slate-500); text-decoration: none; }
+        footer a:hover { color: var(--blue-600); }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .cards, .feature-grid, .ph-grid { grid-template-columns: 1fr; }
+            .hero { padding: 3.5rem 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-inner">
+            <img src="1024.png" alt="Expnz Logo" class="hero-logo" />
+            <h1>Expnz</h1>
+            <p class="tagline">AI-powered bill scanning &amp; expense tracking.<br>Your data stays on your device.</p>
+            <div class="privacy-badge">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Privacy-first · No cloud servers · Zero data collection
+            </div>
+        </div>
+    </section>
+
+    <div class="section">
+        <p class="section-title">Legal Documents</p>
+        <div class="cards">
+            <a href="privacy.html" class="card">
+                <div class="card-icon privacy">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h2>Privacy Policy</h2>
+                <p>How we handle your data, what stays on your device, and what we collect with your consent.</p>
+                <span class="arrow">Read policy <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="terms.html" class="card">
+                <div class="card-icon terms">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h2>Terms of Service</h2>
+                <p>The terms and conditions governing your use of the Expnz application and services.</p>
+                <span class="arrow">Read terms <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+        </div>
+
+        <div class="features">
+            <h3>About Expnz</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    AI-powered bill scanning via Google Gemini
+                </div>
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Automatic data extraction from receipts
+                </div>
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Smart expense categorization
+                </div>
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Export bills in JSON, CSV, or ZIP
+                </div>
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Local-first storage on your device
+                </div>
+                <div class="feature-item">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Optional backup to your iCloud / Google Drive
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-highlights">
+            <h3>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Privacy by Design
+            </h3>
+            <div class="ph-grid">
+                <div class="ph-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    All bill data stored on your device
+                </div>
+                <div class="ph-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    No developer-controlled cloud servers
+                </div>
+                <div class="ph-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Cloud backup to your own accounts only
+                </div>
+                <div class="ph-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    Analytics only with explicit consent
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 NYL 10 Softwares Private Limited. All rights reserved.</p>
+        <p style="margin-top:.35rem;">
+            <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
+            <a href="mailto:support@expnz.app">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>

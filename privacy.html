@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Expnz — AI-powered bill scanning & expense tracking. Privacy-first architecture with local data storage.">
+    <title>Privacy Policy — Expnz</title>
+    <link rel="icon" type="image/png" href="1024.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-600: #2563EB;
+            --blue-700: #1D4ED8;
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --slate-900: #0F172A;
+            --slate-800: #1E293B;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748B;
+            --slate-400: #94A3B8;
+            --slate-300: #CBD5E1;
+            --slate-200: #E2E8F0;
+            --slate-100: #F1F5F9;
+            --slate-50: #F8FAFC;
+            --green-600: #16A34A;
+            --green-50: #F0FDF4;
+            --green-100: #DCFCE7;
+            --amber-50: #FFFBEB;
+            --amber-100: #FEF3C7;
+            --amber-600: #D97706;
+            --red-50: #FEF2F2;
+            --red-100: #FEE2E2;
+            --red-600: #DC2626;
+            --white: #FFFFFF;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-700);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 3rem 1.5rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,.12), transparent);
+            pointer-events: none;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .8rem;
+            color: var(--slate-400);
+            margin-bottom: 1.25rem;
+        }
+        .header-breadcrumb a {
+            color: var(--slate-400);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .header-breadcrumb a:hover { color: var(--white); }
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: .35rem;
+        }
+        .header-meta {
+            font-size: .875rem;
+            color: var(--slate-400);
+        }
+        .header-meta strong { color: var(--slate-300); }
+
+        /* ── Sticky Nav ── */
+        .toc-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--slate-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .toc-bar-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: .25rem;
+            padding: .5rem 1.5rem;
+        }
+        .toc-bar a {
+            white-space: nowrap;
+            padding: .4rem .75rem;
+            border-radius: 6px;
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--slate-500);
+            text-decoration: none;
+            transition: all .15s;
+        }
+        .toc-bar a:hover {
+            background: var(--blue-50);
+            color: var(--blue-600);
+        }
+
+        /* ── Main Content ── */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* ── Privacy Summary Card ── */
+        .summary-card {
+            background: var(--green-50);
+            border: 1px solid var(--green-100);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .summary-card h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--green-600);
+            margin-bottom: 1rem;
+            display: flex; align-items: center; gap: .5rem;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .summary-item h3 {
+            font-size: .78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--slate-500);
+            margin-bottom: .35rem;
+        }
+        .summary-item p {
+            font-size: .85rem;
+            color: var(--slate-700);
+            line-height: 1.5;
+        }
+
+        /* ── Sections ── */
+        section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 64px;
+        }
+        section > h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+            padding-bottom: .5rem;
+            border-bottom: 2px solid var(--slate-100);
+            letter-spacing: -0.01em;
+        }
+        section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            margin: 1.5rem 0 .5rem;
+        }
+        section p {
+            margin-bottom: .75rem;
+            color: var(--slate-600);
+        }
+
+        /* ── Data Table ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.25rem;
+            font-size: .875rem;
+        }
+        .data-table th {
+            text-align: left;
+            padding: .65rem .85rem;
+            background: var(--slate-100);
+            color: var(--slate-700);
+            font-weight: 600;
+            font-size: .78rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            border-bottom: 2px solid var(--slate-200);
+        }
+        .data-table td {
+            padding: .65rem .85rem;
+            border-bottom: 1px solid var(--slate-100);
+            color: var(--slate-600);
+            vertical-align: top;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table .mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .8rem;
+            color: var(--slate-500);
+        }
+
+        /* ── Info Boxes ── */
+        .info-box {
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            font-size: .875rem;
+            line-height: 1.6;
+        }
+        .info-box.green {
+            background: var(--green-50);
+            border: 1px solid var(--green-100);
+            color: #166534;
+        }
+        .info-box.amber {
+            background: var(--amber-50);
+            border: 1px solid var(--amber-100);
+            color: #92400E;
+        }
+        .info-box.blue {
+            background: var(--blue-50);
+            border: 1px solid var(--blue-100);
+            color: #1E40AF;
+        }
+        .info-box.red {
+            background: var(--red-50);
+            border: 1px solid var(--red-100);
+            color: #991B1B;
+        }
+        .info-box strong { display: block; margin-bottom: .25rem; }
+
+        /* ── Inline Lists ── */
+        .inline-list {
+            margin: .5rem 0 1rem 1.25rem;
+        }
+        .inline-list li {
+            margin-bottom: .35rem;
+            color: var(--slate-600);
+        }
+        .inline-list li strong { color: var(--slate-700); }
+
+        /* ── Third-Party Cards ── */
+        .tp-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: .75rem 0;
+        }
+        .tp-card h4 {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            margin-bottom: .35rem;
+        }
+        .tp-card p {
+            font-size: .85rem;
+            color: var(--slate-500);
+            margin-bottom: .25rem;
+        }
+        .tp-card a {
+            color: var(--blue-600);
+            text-decoration: none;
+            font-size: .85rem;
+        }
+        .tp-card a:hover { text-decoration: underline; }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--slate-200);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: var(--white);
+        }
+        footer p { font-size: .8rem; color: var(--slate-400); line-height: 1.6; }
+        footer a { color: var(--slate-500); text-decoration: none; }
+        footer a:hover { color: var(--blue-600); }
+
+        /* ── Nav Buttons ── */
+        .nav-buttons {
+            display: flex;
+            gap: .75rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .6rem 1.25rem;
+            border-radius: 8px;
+            font-size: .85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .15s;
+        }
+        .nav-btn.primary {
+            background: var(--blue-600);
+            color: var(--white);
+        }
+        .nav-btn.primary:hover { background: var(--blue-700); }
+        .nav-btn.secondary {
+            background: var(--slate-100);
+            color: var(--slate-700);
+        }
+        .nav-btn.secondary:hover { background: var(--slate-200); }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.75rem; }
+            .summary-grid { grid-template-columns: 1fr; }
+            main { padding: 1.5rem 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="header-breadcrumb">
+                <a href="index.html">Expnz</a>
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                <span>Privacy Policy</span>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="header-meta">Effective date: <strong>February 9, 2025</strong> · Last updated: <strong>February 9, 2025</strong></p>
+        </div>
+    </header>
+
+    <nav class="toc-bar">
+        <div class="toc-bar-inner">
+            <a href="#summary">Summary</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#data-collected">Data Collected</a>
+            <a href="#ai-processing">AI Processing</a>
+            <a href="#cloud-backup">Cloud Backup</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#third-party">Third Parties</a>
+            <a href="#rights">Your Rights</a>
+            <a href="#security">Security</a>
+            <a href="#children">Children</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ═══ SUMMARY ═══ -->
+        <div class="summary-card" id="summary">
+            <h2>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Privacy at a Glance
+            </h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <h3>What stays on your device</h3>
+                    <p>All bill images, receipt photos, merchant names, amounts, line items, categories, and your complete expense history.</p>
+                </div>
+                <div class="summary-item">
+                    <h3>What we collect (opt-in only)</h3>
+                    <p>Approximate location (city &amp; country), number of bills uploaded per month, and device platform. Only with your explicit consent.</p>
+                </div>
+                <div class="summary-item">
+                    <h3>What we never collect</h3>
+                    <p>Bill photos, receipt images, merchant names, amounts, personal financial information, or precise GPS coordinates.</p>
+                </div>
+                <div class="summary-item">
+                    <h3>Cloud backup</h3>
+                    <p>Optional. Backs up to <em>your own</em> iCloud or Google Drive account. We never access or store your backup data.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ═══ 1. INTRODUCTION ═══ -->
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+                This Privacy Policy explains how NYL 10 Softwares Private Limited ("we," "us," or "our") handles information 
+                in connection with the Expnz mobile application ("App"). Expnz is an AI-powered bill scanning and expense 
+                tracking application designed with a <strong>privacy-first architecture</strong>.
+            </p>
+            <p>
+                By using Expnz, you agree to the practices described in this policy. If you do not agree, please do not use the App.
+            </p>
+        </section>
+
+
+        <!-- ═══ 2. ARCHITECTURE ═══ -->
+        <section id="architecture">
+            <h2>2. Privacy-First Architecture</h2>
+            <p>
+                Expnz is built on a <strong>local-first data model</strong>. Unlike traditional expense tracking apps 
+                that store your financial data on company servers, Expnz keeps all of your bill data on your device's 
+                local storage. We do not operate backend databases that store your personal expense information.
+            </p>
+
+            <div class="info-box green">
+                <strong>🛡️ What this means for you:</strong>
+                Your bills, receipt images, merchant names, amounts, itemized details, and expense history remain on your 
+                device at all times. We have no ability to view, access, or retrieve this data.
+            </div>
+
+            <h3>2.1 Data Flow Overview</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Where Data Goes</th>
+                        <th>Stored Permanently?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scanning a bill</td>
+                        <td>Image sent temporarily to Google Gemini API for text extraction, then stored locally on your device</td>
+                        <td>Only on your device</td>
+                    </tr>
+                    <tr>
+                        <td>Viewing / editing bills</td>
+                        <td>Processed entirely on your device</td>
+                        <td>Only on your device</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud backup (optional)</td>
+                        <td>Your personal iCloud or Google Drive account</td>
+                        <td>In your cloud account</td>
+                    </tr>
+                    <tr>
+                        <td>Signing in</td>
+                        <td>Firebase Authentication (Google/Apple sign-in)</td>
+                        <td>Auth token only</td>
+                    </tr>
+                    <tr>
+                        <td>Subscription purchase</td>
+                        <td>App Store / Google Play → Firebase Cloud Functions for receipt verification</td>
+                        <td>Subscription status only</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics (opt-in)</td>
+                        <td>City, country, monthly bill count, platform → Firebase Firestore</td>
+                        <td>Yes, until opt-out or deletion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- ═══ 3. DATA COLLECTED ═══ -->
+        <section id="data-collected">
+            <h2>3. Information We Collect</h2>
+
+            <h3>3.1 Information Stored Locally (Not Collected by Us)</h3>
+            <p>The following data is stored exclusively on your device and is never transmitted to our servers:</p>
+            <ul class="inline-list">
+                <li>Bill and receipt images</li>
+                <li>Extracted merchant names, dates, amounts, and line items</li>
+                <li>Expense categories and tags</li>
+                <li>Your complete expense history and analytics</li>
+                <li>App preferences and settings</li>
+            </ul>
+
+            <h3>3.2 Authentication Information</h3>
+            <p>
+                When you sign in using Google Sign-In or Sign in with Apple, we receive a limited authentication profile 
+                through Firebase Authentication. This includes your name, email address, and a unique user identifier. 
+                This information is used solely to authenticate your identity and manage your subscription status.
+            </p>
+
+            <h3>3.3 Location Data</h3>
+            <p>
+                Expnz requests access to your device's location to automatically detect your region and configure the 
+                correct <strong>currency symbol</strong> and <strong>date format</strong> for bill scanning. 
+                This improves the accuracy of AI-powered data extraction.
+            </p>
+            <div class="info-box blue">
+                <strong>📍 How location is used:</strong>
+                We use your location solely for determining your city and country to set the appropriate locale settings 
+                (currency codes and date formats). We do not track your movements or record precise GPS coordinates. 
+                If you opt into analytics, your city and country may be shared anonymously (see Section 6).
+            </div>
+
+            <h3>3.4 Camera and Photo Library Access</h3>
+            <p>
+                Expnz requires access to your device camera and photo library to capture or select receipt images for scanning. 
+                These images are processed using Google's Gemini API to extract text (see Section 4). We do not access 
+                your camera or photos for any purpose other than bill scanning initiated by you.
+            </p>
+
+            <h3>3.5 Subscription Information</h3>
+            <p>
+                If you purchase an Expnz Pro subscription, the transaction is processed entirely through the Apple App Store 
+                or Google Play Store. We receive a purchase receipt which is verified through our Firebase Cloud Functions to 
+                confirm your subscription status. We store only your subscription status, product identifier, and expiration date. 
+                We do not receive or store your payment details, credit card numbers, or billing address.
+            </p>
+        </section>
+
+
+        <!-- ═══ 4. AI PROCESSING ═══ -->
+        <section id="ai-processing">
+            <h2>4. AI-Powered Bill Processing</h2>
+            <p>
+                Expnz uses Google's Gemini API to extract text and structured data from receipt images. When you scan a bill:
+            </p>
+            <ul class="inline-list">
+                <li>Your receipt image is <strong>temporarily transmitted</strong> to Google's Gemini API for processing.</li>
+                <li>Google processes the image and returns extracted text data (merchant name, date, amount, line items) to the App.</li>
+                <li>The extracted data is stored <strong>locally on your device</strong>.</li>
+                <li>Google does not permanently store your receipt images for this API usage.</li>
+            </ul>
+
+            <div class="info-box amber">
+                <strong>⚠️ Important:</strong>
+                While Google processes receipt images to extract data, this processing is transient. According to 
+                Google's API data usage policies, images sent via the paid Gemini API are not used to train Google's models. 
+                Please refer to 
+                <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Google's Gemini API Terms</a> 
+                for the most current information on their data handling practices.
+            </div>
+        </section>
+
+
+        <!-- ═══ 5. CLOUD BACKUP ═══ -->
+        <section id="cloud-backup">
+            <h2>5. Optional Cloud Backup</h2>
+            <p>
+                Expnz offers optional cloud backup to help you preserve your data across devices. This feature backs up 
+                your bill data to <strong>your own personal cloud storage account</strong>:
+            </p>
+            <ul class="inline-list">
+                <li><strong>iOS users:</strong> iCloud Drive (under your Apple ID)</li>
+                <li><strong>Android users:</strong> Google Drive (under your Google account)</li>
+            </ul>
+
+            <div class="info-box green">
+                <strong>🔐 Your data, your cloud:</strong>
+                Backup data is stored in your personal cloud storage account, not on any server we operate. 
+                We do not have access to read, modify, or retrieve your backed-up data. You retain full ownership 
+                and control over your cloud-stored data through your iCloud or Google Drive account settings.
+            </div>
+        </section>
+
+
+        <!-- ═══ 6. ANALYTICS ═══ -->
+        <section id="analytics">
+            <h2>6. Anonymous Analytics (Opt-In Only)</h2>
+            <p>
+                With your explicit consent, Expnz collects a minimal set of anonymous analytics data to help us 
+                understand how the App is used across different regions and to improve the experience for all users.
+            </p>
+
+            <h3>6.1 What We Collect</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Point</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Approximate location</td>
+                        <td class="mono">Chennai, India</td>
+                        <td>Understand geographic usage distribution</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly bill count</td>
+                        <td class="mono">2025-01: 12</td>
+                        <td>Measure feature adoption and engagement</td>
+                    </tr>
+                    <tr>
+                        <td>Device platform</td>
+                        <td class="mono">iOS</td>
+                        <td>Prioritize platform-specific improvements</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>6.2 What We Never Collect</h3>
+            <ul class="inline-list">
+                <li>Bill photos, receipt images, or scanned documents</li>
+                <li>Merchant names, transaction amounts, or line items</li>
+                <li>Personal financial data of any kind</li>
+                <li>Precise GPS coordinates or movement data</li>
+                <li>Device identifiers, IP addresses, or browsing history</li>
+            </ul>
+
+            <h3>6.3 Your Control</h3>
+            <p>
+                Analytics collection is <strong>entirely opt-in</strong>. You are prompted for consent when you first use the App 
+                and can change your preference at any time via <strong>Settings → Privacy → Share anonymous usage data</strong>. 
+                Opting out immediately stops all analytics data collection. Previously collected data can be deleted upon request.
+            </p>
+        </section>
+
+
+        <!-- ═══ 7. THIRD PARTIES ═══ -->
+        <section id="third-party">
+            <h2>7. Third-Party Services</h2>
+            <p>Expnz integrates with the following third-party services to provide core functionality:</p>
+
+            <div class="tp-card">
+                <h4>Google Gemini API</h4>
+                <p><strong>Purpose:</strong> AI-powered text extraction from receipt images.</p>
+                <p><strong>Data shared:</strong> Receipt images (temporarily, for processing only).</p>
+                <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API Terms →</a>
+            </div>
+
+            <div class="tp-card">
+                <h4>Firebase (Google Cloud)</h4>
+                <p><strong>Services used:</strong> Authentication, Cloud Functions (subscription verification), Firestore (analytics &amp; subscription status).</p>
+                <p><strong>Data shared:</strong> Authentication profile (name, email), subscription status, opt-in analytics data.</p>
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy →</a>
+            </div>
+
+            <div class="tp-card">
+                <h4>Apple App Store / Google Play Store</h4>
+                <p><strong>Purpose:</strong> In-app subscription purchases and payment processing.</p>
+                <p><strong>Data shared:</strong> Purchase receipts (for subscription verification). We do not receive payment details.</p>
+                <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy →</a>
+                &nbsp;·&nbsp;
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy →</a>
+            </div>
+
+            <div class="tp-card">
+                <h4>iCloud Drive / Google Drive</h4>
+                <p><strong>Purpose:</strong> Optional user-controlled cloud backup of bill data.</p>
+                <p><strong>Data shared:</strong> Your bill data is backed up to your own account. We do not access this data.</p>
+            </div>
+
+            <p>We do not sell, rent, or share your personal information with third parties for advertising or marketing purposes.</p>
+        </section>
+
+
+        <!-- ═══ 8. YOUR RIGHTS ═══ -->
+        <section id="rights">
+            <h2>8. Your Privacy Rights</h2>
+
+            <h3>8.1 Data Access and Control</h3>
+            <p>Because your bill data is stored locally on your device, you have direct and immediate control over it:</p>
+            <ul class="inline-list">
+                <li><strong>Access:</strong> View all your bill data directly within the App at any time.</li>
+                <li><strong>Edit:</strong> Modify or correct any bill information.</li>
+                <li><strong>Delete:</strong> Remove individual bills or clear all data via Settings → Clear All Data.</li>
+                <li><strong>Export:</strong> Export your bills in JSON, CSV, or ZIP format via Settings → Export Bills.</li>
+                <li><strong>Opt-out:</strong> Disable analytics at any time via Settings → Privacy.</li>
+            </ul>
+
+            <h3>8.2 Account Deletion</h3>
+            <p>
+                You can delete your account through the App. Upon deletion, your authentication data, subscription records, 
+                and any opt-in analytics data stored on our servers are permanently removed within 30 days. Local data on your 
+                device can be cleared via the App's settings at any time.
+            </p>
+
+            <h3>8.3 GDPR Rights (EU/EEA Users)</h3>
+            <p>If you are located in the European Union or European Economic Area, you have the following additional rights under the General Data Protection Regulation:</p>
+            <ul class="inline-list">
+                <li>Right to access your personal data</li>
+                <li>Right to rectification of inaccurate data</li>
+                <li>Right to erasure ("right to be forgotten")</li>
+                <li>Right to data portability</li>
+                <li>Right to restrict or object to processing</li>
+                <li>Right to lodge a complaint with a supervisory authority</li>
+            </ul>
+            <p>To exercise these rights, contact us at <a href="mailto:privacy@expnz.app" style="color: var(--blue-600);">privacy@expnz.app</a>.</p>
+
+            <h3>8.4 CCPA Rights (California Residents)</h3>
+            <p>Under the California Consumer Privacy Act, California residents have the right to know what personal information is collected, request deletion, and opt out of the sale of personal information. <strong>We do not sell personal information.</strong></p>
+        </section>
+
+
+        <!-- ═══ 9. SECURITY ═══ -->
+        <section id="security">
+            <h2>9. Data Security</h2>
+            <p>We take the security of your data seriously and employ the following measures:</p>
+            <ul class="inline-list">
+                <li><strong>Local storage:</strong> Your primary bill data is stored on-device, protected by your device's built-in security (passcode, biometrics, encryption).</li>
+                <li><strong>Encryption in transit:</strong> All network communications use industry-standard TLS/SSL encryption.</li>
+                <li><strong>Authentication:</strong> Firebase Authentication with secure token-based access control.</li>
+                <li><strong>Server-side security:</strong> Firebase Cloud Functions with authenticated access and input validation for subscription verification and analytics.</li>
+                <li><strong>Minimal data exposure:</strong> By storing the vast majority of data locally, we significantly reduce the attack surface compared to traditional cloud-based architectures.</li>
+            </ul>
+            <p>
+                No method of electronic storage or transmission is 100% secure. While we strive to protect your information, 
+                we cannot guarantee absolute security.
+            </p>
+        </section>
+
+
+        <!-- ═══ 10. DATA RETENTION ═══ -->
+        <section id="retention">
+            <h2>10. Data Retention</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Retention Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Local bill data (on your device)</td>
+                        <td>Until you delete it — we have no access</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud backup data (your iCloud / Google Drive)</td>
+                        <td>Managed by you through your cloud account settings</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication data</td>
+                        <td>Until you delete your account</td>
+                    </tr>
+                    <tr>
+                        <td>Subscription records</td>
+                        <td>Duration of subscription plus 90 days after account deletion</td>
+                    </tr>
+                    <tr>
+                        <td>Opt-in analytics data</td>
+                        <td>Until you opt out or request deletion; up to 24 months maximum</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- ═══ 11. CHILDREN ═══ -->
+        <section id="children">
+            <h2>11. Children's Privacy</h2>
+            <p>
+                Expnz is not intended for children under the age of 13 (or the applicable minimum age in your jurisdiction). 
+                We do not knowingly collect personal information from children. If you believe that a child has provided us 
+                with personal data, please contact us immediately at 
+                <a href="mailto:privacy@expnz.app" style="color: var(--blue-600);">privacy@expnz.app</a>, and we will take 
+                steps to delete such information.
+            </p>
+        </section>
+
+
+        <!-- ═══ 12. INTERNATIONAL ═══ -->
+        <section id="international">
+            <h2>12. International Data Transfers</h2>
+            <p>
+                Expnz is operated from India. If you access the App from outside India, please be aware that the limited 
+                data we do collect (authentication, subscription status, opt-in analytics) may be processed in India or in 
+                data centers operated by our third-party service providers (Google/Firebase) in various locations globally. 
+                By using the App, you consent to such transfers.
+            </p>
+        </section>
+
+
+        <!-- ═══ 13. CHANGES ═══ -->
+        <section id="changes">
+            <h2>13. Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time to reflect changes in our practices, services, or 
+                applicable laws. We will notify you of significant changes through in-app notifications and by updating 
+                the "Last Updated" date at the top of this page. Your continued use of Expnz after changes are posted 
+                constitutes acceptance of the revised policy.
+            </p>
+        </section>
+
+
+        <!-- ═══ 14. CONTACT ═══ -->
+        <section id="contact">
+            <h2>14. Contact Us</h2>
+            <p>
+                If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:
+            </p>
+            <div class="tp-card">
+                <p><strong>Privacy inquiries:</strong> <a href="mailto:privacy@expnz.app">privacy@expnz.app</a></p>
+                <p><strong>General support:</strong> <a href="mailto:support@expnz.app">support@expnz.app</a></p>
+                <p style="margin-top:.5rem; font-size: .8rem; color: var(--slate-400);">
+                    NYL 10 Softwares Private Limited · India
+                </p>
+            </div>
+            <p>We aim to respond to all privacy-related inquiries within 48 hours on business days.</p>
+        </section>
+
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn secondary">← Back to Home</a>
+            <a href="terms.html" class="nav-btn primary">Terms of Service →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NYL 10 Softwares Private Limited. All rights reserved.</p>
+        <p style="margin-top:.35rem;">
+            <a href="index.html">Home</a> &nbsp;·&nbsp;
+            <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="terms.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
