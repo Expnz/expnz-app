@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Expnz — AI-powered bill scanning & expense tracking application.">
+    <title>Terms of Service — Expnz</title>
+    <link rel="icon" type="image/png" href="1024.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-600: #2563EB;
+            --blue-700: #1D4ED8;
+            --blue-50: #EFF6FF;
+            --blue-100: #DBEAFE;
+            --slate-900: #0F172A;
+            --slate-800: #1E293B;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748B;
+            --slate-400: #94A3B8;
+            --slate-300: #CBD5E1;
+            --slate-200: #E2E8F0;
+            --slate-100: #F1F5F9;
+            --slate-50: #F8FAFC;
+            --green-600: #16A34A;
+            --green-50: #F0FDF4;
+            --green-100: #DCFCE7;
+            --amber-50: #FFFBEB;
+            --amber-100: #FEF3C7;
+            --amber-600: #D97706;
+            --red-50: #FEF2F2;
+            --red-100: #FEE2E2;
+            --white: #FFFFFF;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-700);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 3rem 1.5rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,.12), transparent);
+            pointer-events: none;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .8rem;
+            color: var(--slate-400);
+            margin-bottom: 1.25rem;
+        }
+        .header-breadcrumb a {
+            color: var(--slate-400);
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .header-breadcrumb a:hover { color: var(--white); }
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: .35rem;
+        }
+        .header-meta {
+            font-size: .875rem;
+            color: var(--slate-400);
+        }
+        .header-meta strong { color: var(--slate-300); }
+
+        .toc-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--slate-200);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .toc-bar-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: .25rem;
+            padding: .5rem 1.5rem;
+        }
+        .toc-bar a {
+            white-space: nowrap;
+            padding: .4rem .75rem;
+            border-radius: 6px;
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--slate-500);
+            text-decoration: none;
+            transition: all .15s;
+        }
+        .toc-bar a:hover {
+            background: var(--blue-50);
+            color: var(--blue-600);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 64px;
+        }
+        section > h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+            padding-bottom: .5rem;
+            border-bottom: 2px solid var(--slate-100);
+            letter-spacing: -0.01em;
+        }
+        section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            margin: 1.5rem 0 .5rem;
+        }
+        section p {
+            margin-bottom: .75rem;
+            color: var(--slate-600);
+        }
+
+        .inline-list {
+            margin: .5rem 0 1rem 1.25rem;
+        }
+        .inline-list li {
+            margin-bottom: .35rem;
+            color: var(--slate-600);
+        }
+        .inline-list li strong { color: var(--slate-700); }
+
+        a { color: var(--blue-600); }
+
+        .info-box {
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            font-size: .875rem;
+            line-height: 1.6;
+        }
+        .info-box.amber {
+            background: var(--amber-50);
+            border: 1px solid var(--amber-100);
+            color: #92400E;
+        }
+        .info-box.blue {
+            background: var(--blue-50);
+            border: 1px solid var(--blue-100);
+            color: #1E40AF;
+        }
+        .info-box.green {
+            background: var(--green-50);
+            border: 1px solid var(--green-100);
+            color: #166534;
+        }
+        .info-box.red {
+            background: var(--red-50);
+            border: 1px solid var(--red-100);
+            color: #991B1B;
+        }
+        .info-box strong { display: block; margin-bottom: .25rem; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.25rem;
+            font-size: .875rem;
+        }
+        .data-table th {
+            text-align: left;
+            padding: .65rem .85rem;
+            background: var(--slate-100);
+            color: var(--slate-700);
+            font-weight: 600;
+            font-size: .78rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            border-bottom: 2px solid var(--slate-200);
+        }
+        .data-table td {
+            padding: .65rem .85rem;
+            border-bottom: 1px solid var(--slate-100);
+            color: var(--slate-600);
+            vertical-align: top;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        footer {
+            border-top: 1px solid var(--slate-200);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: var(--white);
+        }
+        footer p { font-size: .8rem; color: var(--slate-400); line-height: 1.6; }
+        footer a { color: var(--slate-500); text-decoration: none; }
+        footer a:hover { color: var(--blue-600); }
+
+        .nav-buttons {
+            display: flex;
+            gap: .75rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .6rem 1.25rem;
+            border-radius: 8px;
+            font-size: .85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .15s;
+        }
+        .nav-btn.primary {
+            background: var(--blue-600);
+            color: var(--white);
+        }
+        .nav-btn.primary:hover { background: var(--blue-700); }
+        .nav-btn.secondary {
+            background: var(--slate-100);
+            color: var(--slate-700);
+        }
+        .nav-btn.secondary:hover { background: var(--slate-200); }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 1.75rem; }
+            main { padding: 1.5rem 1.25rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="header-breadcrumb">
+                <a href="index.html">Expnz</a>
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                <span>Terms of Service</span>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="header-meta">Effective date: <strong>February 9, 2025</strong> · Last updated: <strong>February 9, 2025</strong></p>
+        </div>
+    </header>
+
+    <nav class="toc-bar">
+        <div class="toc-bar-inner">
+            <a href="#acceptance">Acceptance</a>
+            <a href="#service">Service</a>
+            <a href="#accounts">Accounts</a>
+            <a href="#acceptable-use">Acceptable Use</a>
+            <a href="#ip">Intellectual Property</a>
+            <a href="#subscriptions">Subscriptions</a>
+            <a href="#data-ownership">Data Ownership</a>
+            <a href="#disclaimers">Disclaimers</a>
+            <a href="#liability">Liability</a>
+            <a href="#termination">Termination</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ═══ 1. ACCEPTANCE ═══ -->
+        <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+                By downloading, installing, or using the Expnz mobile application ("App"), you agree to be bound by these 
+                Terms of Service ("Terms"). These Terms constitute a legally binding agreement between you and 
+                NYL 10 Softwares Private Limited ("we," "us," or "our"). If you do not agree to these Terms, 
+                do not use the App.
+            </p>
+            <p>
+                These Terms should be read in conjunction with our <a href="privacy.html">Privacy Policy</a>, 
+                which describes how we handle your information.
+            </p>
+        </section>
+
+
+        <!-- ═══ 2. SERVICE ═══ -->
+        <section id="service">
+            <h2>2. Description of Service</h2>
+            <p>
+                Expnz is an AI-powered bill scanning and expense tracking application built on a privacy-first, 
+                local-storage architecture. The service includes:
+            </p>
+            <ul class="inline-list">
+                <li><strong>Bill scanning:</strong> Capture or import receipt images for AI-powered data extraction using Google Gemini.</li>
+                <li><strong>Expense tracking:</strong> Store, categorize, and manage your bills and expenses locally on your device.</li>
+                <li><strong>Optional cloud backup:</strong> Back up your data to your personal iCloud or Google Drive account.</li>
+                <li><strong>Data export:</strong> Export your bill data in JSON, CSV, or ZIP formats.</li>
+                <li><strong>Analytics &amp; reporting:</strong> View spending insights and reports generated from your local data.</li>
+                <li><strong>Pro subscription:</strong> Access to additional features beyond the free tier.</li>
+            </ul>
+        </section>
+
+
+        <!-- ═══ 3. ACCOUNTS ═══ -->
+        <section id="accounts">
+            <h2>3. User Accounts</h2>
+
+            <h3>3.1 Account Creation</h3>
+            <p>To use Expnz, you must create an account using Google Sign-In or Sign in with Apple. By creating an account, you represent that:</p>
+            <ul class="inline-list">
+                <li>You are at least 13 years of age (or the minimum age in your jurisdiction).</li>
+                <li>The information you provide is accurate and complete.</li>
+                <li>You will maintain the security of your account credentials.</li>
+                <li>You will not create more than one account per person.</li>
+            </ul>
+
+            <h3>3.2 Account Security</h3>
+            <p>
+                You are responsible for all activity that occurs under your account. You must notify us immediately at 
+                <a href="mailto:support@expnz.app">support@expnz.app</a> if you become aware of any unauthorized access. 
+                We are not liable for losses resulting from compromised account credentials.
+            </p>
+        </section>
+
+
+        <!-- ═══ 4. ACCEPTABLE USE ═══ -->
+        <section id="acceptable-use">
+            <h2>4. Acceptable Use</h2>
+
+            <h3>4.1 Permitted Use</h3>
+            <p>
+                Expnz is designed for personal and business expense tracking. You may use the App to scan, organize, 
+                and manage your own receipts and bills.
+            </p>
+
+            <h3>4.2 Prohibited Conduct</h3>
+            <p>You agree not to:</p>
+            <ul class="inline-list">
+                <li>Upload content that is illegal, fraudulent, or infringes on the rights of others.</li>
+                <li>Attempt to reverse engineer, decompile, or disassemble the App.</li>
+                <li>Exploit, hack, or interfere with the App's infrastructure or security systems.</li>
+                <li>Share your account credentials with others or allow unauthorized access.</li>
+                <li>Use the App to upload malicious content, viruses, or harmful code.</li>
+                <li>Use the App for any purpose that violates applicable laws or regulations.</li>
+                <li>Attempt to manipulate the subscription system or circumvent usage limits.</li>
+            </ul>
+
+            <h3>4.3 Content Accuracy</h3>
+            <p>
+                AI-powered data extraction is provided as a convenience and may not always be 100% accurate. 
+                You are responsible for reviewing and verifying all extracted data before relying on it for 
+                financial, tax, or legal purposes. We are not responsible for errors in AI-generated data.
+            </p>
+        </section>
+
+
+        <!-- ═══ 5. INTELLECTUAL PROPERTY ═══ -->
+        <section id="ip">
+            <h2>5. Intellectual Property</h2>
+
+            <h3>5.1 Our Rights</h3>
+            <p>
+                All rights, title, and interest in and to the Expnz application — including its design, code, 
+                logos, trademarks, and documentation — are owned by NYL 10 Softwares Private Limited. 
+                You may not copy, modify, distribute, sell, or create derivative works of the App without 
+                our prior written permission.
+            </p>
+
+            <h3>5.2 Your Content</h3>
+            <p>
+                You retain full ownership of all bill images, receipt data, and expense information you create or 
+                upload through the App. Since your data is stored locally on your device (and optionally in your 
+                personal cloud storage), we do not claim any ownership or license over your content beyond what 
+                is necessary to provide the service (such as temporarily processing receipt images via the Gemini API).
+            </p>
+        </section>
+
+
+        <!-- ═══ 6. SUBSCRIPTIONS ═══ -->
+        <section id="subscriptions">
+            <h2>6. Subscriptions and Payments</h2>
+
+            <h3>6.1 Free Tier</h3>
+            <p>
+                Expnz offers a free tier that allows you to scan and manage a limited number of bills. The free tier 
+                provides access to core features with a lifetime limit of 10 bills.
+            </p>
+
+            <h3>6.2 Expnz Pro</h3>
+            <p>
+                Expnz Pro is a premium subscription that unlocks unlimited bill scanning and additional features. 
+                Subscriptions are available on a monthly basis and are processed through the Apple App Store (iOS) 
+                or Google Play Store (Android).
+            </p>
+            <ul class="inline-list">
+                <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
+                <li>You can manage and cancel your subscription through your device's App Store or Google Play settings.</li>
+                <li>Payment is charged to your App Store or Google Play account at confirmation of purchase.</li>
+            </ul>
+
+            <h3>6.3 Refunds</h3>
+            <p>
+                Refund requests must be submitted through the Apple App Store or Google Play Store, as all payments 
+                are processed by the respective platform. We follow the refund policies of Apple and Google.
+            </p>
+
+            <h3>6.4 Price Changes</h3>
+            <p>
+                We reserve the right to change subscription prices. Any price changes will take effect for the next 
+                billing cycle after notice is provided through the App or the respective app store.
+            </p>
+        </section>
+
+
+        <!-- ═══ 7. DATA OWNERSHIP ═══ -->
+        <section id="data-ownership">
+            <h2>7. Data Ownership and Privacy</h2>
+
+            <div class="info-box green">
+                <strong>🛡️ Your data belongs to you.</strong>
+                Expnz uses a local-first architecture. Your bill data, receipt images, and expense history are stored 
+                on your device. Optional cloud backups are stored in your personal iCloud or Google Drive account, 
+                not on our servers.
+            </div>
+
+            <p>
+                Your use of Expnz is also governed by our <a href="privacy.html">Privacy Policy</a>, which details 
+                how we handle information, what we collect with your consent, and your privacy rights. 
+                Key highlights:
+            </p>
+            <ul class="inline-list">
+                <li>All bill data is stored locally on your device.</li>
+                <li>Receipt images are sent temporarily to Google Gemini API for processing only.</li>
+                <li>Anonymous analytics are collected only with your explicit opt-in consent.</li>
+                <li>We do not sell, rent, or share your personal data for advertising purposes.</li>
+            </ul>
+        </section>
+
+
+        <!-- ═══ 8. SERVICE AVAILABILITY ═══ -->
+        <section id="availability">
+            <h2>8. Service Availability</h2>
+
+            <h3>8.1 Uptime</h3>
+            <p>
+                Because Expnz primarily operates on your device with local data storage, most features remain 
+                functional even without an internet connection. Features that require network access (bill scanning 
+                via Gemini API, cloud backup, subscription management) depend on the availability of third-party 
+                services and your internet connection.
+            </p>
+
+            <h3>8.2 Changes to the Service</h3>
+            <p>
+                We may modify, update, suspend, or discontinue features of the App at any time. We will provide 
+                reasonable notice for significant changes that affect your use of the service.
+            </p>
+        </section>
+
+
+        <!-- ═══ 9. DISCLAIMERS ═══ -->
+        <section id="disclaimers">
+            <h2>9. Disclaimer of Warranties</h2>
+
+            <div class="info-box amber">
+                <strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED.</strong>
+                To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to 
+                implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not 
+                warrant that:
+            </div>
+
+            <ul class="inline-list">
+                <li>The App will be error-free, uninterrupted, or free from security vulnerabilities.</li>
+                <li>AI-powered data extraction will be 100% accurate for all receipt types and formats.</li>
+                <li>The App will meet your specific requirements or expectations.</li>
+                <li>Data stored on your device or in your cloud account will never be lost or corrupted.</li>
+            </ul>
+            <p>
+                You acknowledge that AI data extraction is a convenience feature and should not be relied upon as the 
+                sole record for financial, tax, or legal purposes without independent verification.
+            </p>
+        </section>
+
+
+        <!-- ═══ 10. LIABILITY ═══ -->
+        <section id="liability">
+            <h2>10. Limitation of Liability</h2>
+            <p>
+                To the maximum extent permitted by applicable law, NYL 10 Softwares Private Limited shall not be liable for:
+            </p>
+            <ul class="inline-list">
+                <li>Any indirect, incidental, special, consequential, or punitive damages.</li>
+                <li>Loss of profits, data, business opportunities, or goodwill.</li>
+                <li>Damages resulting from errors in AI-extracted data.</li>
+                <li>Damages resulting from unauthorized access to your account or device.</li>
+                <li>Service interruptions caused by third-party service providers.</li>
+                <li>Loss of locally stored data due to device failure, theft, or user error.</li>
+            </ul>
+            <p>
+                Our total aggregate liability for any claims arising from or related to your use of the App shall not 
+                exceed the total amount you have paid to us for subscriptions in the twelve (12) months preceding the 
+                claim, or one hundred United States dollars (USD $100), whichever is less.
+            </p>
+        </section>
+
+
+        <!-- ═══ 11. INDEMNIFICATION ═══ -->
+        <section id="indemnification">
+            <h2>11. Indemnification</h2>
+            <p>
+                You agree to indemnify, defend, and hold harmless NYL 10 Softwares Private Limited, its officers, 
+                directors, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses 
+                (including reasonable legal fees) arising out of or related to your use of the App, your violation of 
+                these Terms, or your violation of any applicable law or the rights of any third party.
+            </p>
+        </section>
+
+
+        <!-- ═══ 12. TERMINATION ═══ -->
+        <section id="termination">
+            <h2>12. Termination</h2>
+
+            <h3>12.1 By You</h3>
+            <p>
+                You may stop using the App and delete your account at any time. Upon account deletion, your 
+                authentication data, subscription records, and any opt-in analytics data are permanently removed 
+                from our systems within 30 days. Local data on your device is not affected by account deletion 
+                and must be cleared separately through the App's settings.
+            </p>
+
+            <h3>12.2 By Us</h3>
+            <p>We may suspend or terminate your account and access to the App if:</p>
+            <ul class="inline-list">
+                <li>You violate these Terms or engage in prohibited conduct.</li>
+                <li>You engage in fraudulent activity or abuse of the subscription system.</li>
+                <li>Your account has been inactive for more than 24 months.</li>
+                <li>Required by law or to protect the rights and safety of our users.</li>
+            </ul>
+
+            <h3>12.3 Effect of Termination</h3>
+            <p>
+                Upon termination, your right to use the App ceases. Sections 5 (Intellectual Property), 
+                9 (Disclaimers), 10 (Limitation of Liability), 11 (Indemnification), and 13 (Governing Law) 
+                survive termination.
+            </p>
+        </section>
+
+
+        <!-- ═══ 13. GOVERNING LAW ═══ -->
+        <section id="governing-law">
+            <h2>13. Governing Law and Disputes</h2>
+            <p>
+                These Terms shall be governed by and construed in accordance with the laws of India. 
+                Any disputes arising out of or in connection with these Terms shall be subject to the 
+                exclusive jurisdiction of the courts located in Chennai, Tamil Nadu, India.
+            </p>
+        </section>
+
+
+        <!-- ═══ 14. CHANGES ═══ -->
+        <section id="changes">
+            <h2>14. Changes to These Terms</h2>
+            <p>
+                We may update these Terms from time to time. We will notify you of significant changes through 
+                in-app notifications and by updating the "Last Updated" date at the top of this page. 
+                Your continued use of the App after changes are posted constitutes acceptance of the revised Terms.
+            </p>
+        </section>
+
+
+        <!-- ═══ 15. MISCELLANEOUS ═══ -->
+        <section id="miscellaneous">
+            <h2>15. General Provisions</h2>
+            <ul class="inline-list">
+                <li><strong>Entire Agreement:</strong> These Terms, together with the Privacy Policy, constitute the entire agreement between you and us regarding the App.</li>
+                <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</li>
+                <li><strong>Waiver:</strong> Our failure to enforce any right or provision shall not constitute a waiver of such right or provision.</li>
+                <li><strong>Assignment:</strong> You may not assign or transfer these Terms without our prior written consent. We may assign our rights and obligations freely.</li>
+            </ul>
+        </section>
+
+
+        <!-- ═══ 16. CONTACT ═══ -->
+        <section id="contact">
+            <h2>16. Contact Information</h2>
+            <p>For questions about these Terms, contact us:</p>
+            <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: .75rem 0;">
+                <p><strong>Legal inquiries:</strong> <a href="mailto:legal@expnz.app">legal@expnz.app</a></p>
+                <p><strong>General support:</strong> <a href="mailto:support@expnz.app">support@expnz.app</a></p>
+                <p style="margin-top:.5rem; font-size: .8rem; color: var(--slate-400);">
+                    NYL 10 Softwares Private Limited · Chennai, Tamil Nadu, India
+                </p>
+            </div>
+        </section>
+
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn secondary">← Back to Home</a>
+            <a href="privacy.html" class="nav-btn primary">Privacy Policy →</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NYL 10 Softwares Private Limited. All rights reserved.</p>
+        <p style="margin-top:.35rem;">
+            <a href="index.html">Home</a> &nbsp;·&nbsp;
+            <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="terms.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
