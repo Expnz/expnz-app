@@ -25,9 +25,9 @@
             --green-600: #16A34A;
             --green-50: #F0FDF4;
             --green-100: #DCFCE7;
-            --white: #FFFFFF;
             --red-600: #DC2626;
             --red-50: #FEF2F2;
+            --white: #FFFFFF;
             --radius: 12px;
         }
 
@@ -106,7 +106,8 @@
             margin-bottom: 1.25rem;
         }
 
-        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        /* 3-column grid for cards */
+        .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         .card {
             display: flex;
             flex-direction: column;
@@ -202,7 +203,7 @@
         footer a { color: var(--slate-500); text-decoration: none; }
         footer a:hover { color: var(--blue-600); }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .hero h1 { font-size: 2rem; }
             .cards, .feature-grid, .ph-grid { grid-template-columns: 1fr; }
             .hero { padding: 3.5rem 1.25rem 3rem; }
@@ -312,6 +313,7 @@
         <p style="margin-top:.35rem;">
             <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
             <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
+            <a href="delete-account.html">Delete Account</a> &nbsp;·&nbsp;
             <a href="mailto:support@getexpnz.com">Contact</a>
         </p>
     </footer>
